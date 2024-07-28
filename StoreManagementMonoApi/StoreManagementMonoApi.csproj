@@ -30,7 +30,6 @@
 
     <ItemGroup>
       <Folder Include="Modules\ImageModule\_Services\_Interfaces\" />
-      <Folder Include="Modules\NoteModule\_Controllers\" />
       <Folder Include="Modules\NoteModule\_Services\" />
       <Folder Include="Modules\ProductModule\_Services\" />
       <Folder Include="Modules\TemplateModule\_Controllers\" />

@@ -216,7 +216,8 @@ public class DebtRepository : IDebtRepository
                     CreatedBy = dd.CreatedByNavigation.FullName,
                     EditedAt = dd.EditedAt,
                     EditedBy = dd.EditedByNavigation.FullName,
-                    DebtId = dd.DebtId
+                    DebtId = dd.DebtId,
+                    PayDate = dd.PayDate
                 })
             };
         }
@@ -251,7 +252,8 @@ public class DebtRepository : IDebtRepository
             CreatedBy = debtDetail.CreatedByNavigation.FullName,
             EditedAt = debtDetail.EditedAt,
             EditedBy = debtDetail.EditedByNavigation.FullName,
-            DebtId = debtDetail.DebtId
+            DebtId = debtDetail.DebtId,
+            PayDate = debtDetail.PayDate
         };
     }
 

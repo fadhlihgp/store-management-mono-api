@@ -30,4 +30,5 @@ public class DebtDetailResponseVm
     public DateTime EditedAt { get; set; }
     public string EditedBy { get; set; }
     public string DebtId { get; set; }
+    public DateTime? PayDate { get; set; }
 }

@@ -23,8 +23,8 @@ public class AuthRepository : IAuthRepository
     public async Task<LoginResponseVm> Login(LoginRequestVm loginRequestVm)
     {
         Account? findByUsernameOrEmail = await _context.Accounts.Where(a =>
-                ((String.Equals(a.Username, loginRequestVm.Email, StringComparison.OrdinalIgnoreCase) ||
-                  String.Equals(a.Email, loginRequestVm.Email, StringComparison.OrdinalIgnoreCase))) && !a.IsDeleted)
+                ((a.Username.ToLower().Equals( loginRequestVm.Email.ToLower()) ||
+                  a.Email.ToLower().Equals( loginRequestVm.Email.ToLower()))) && !a.IsDeleted)
             .Include(account => account.Role)
             .FirstOrDefaultAsync();
         

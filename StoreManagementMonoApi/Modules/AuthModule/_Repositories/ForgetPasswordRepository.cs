@@ -26,7 +26,7 @@ public class ForgetPasswordRepository : IForgetPasswordRepository
     public async Task SendLinkOtpToEmail(SendLinkOtpVm sendLinkOtp)
     {
         // Find user by email
-        var account = await _context.Accounts.Where(a => a.Email.Equals(sendLinkOtp.Email)).FirstOrDefaultAsync();
+        var account = await _context.Accounts.Where(a => a.Email.ToLower().Equals(sendLinkOtp.Email.ToLower())).FirstOrDefaultAsync();
         if (account == null) throw new NotFoundException("Email tidak terdaftar!");
         
         // Find otp token by email
